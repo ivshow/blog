@@ -1,0 +1,124 @@
+---
+title: React 开发常见的错误
+date: 2019-03-20 19:27:03
+cover: http://f.huxiaodo.com/image/blog/a185df6b7753d89bf04c04bbaba58d78.jpg
+---
+
+关于前端开发，我最开心的事情就是总有新的东西可以学习。但我们可能一辈子都在掌握各种编程语言、库和框架，但仍然一无所知。
+
+因为我们都在学习，这也意味着我们都容易犯错误。没关系，我们的目的是变得更好。如果你犯了一个错误并从中吸取教训，你就做得很好！
+
+但是如果你没有学到任何新的东西，并且不断重复犯同样的错误，emmm... 可能你的职业生涯就会停滞不前。
+
+### 1、直接修改状态
+
+在更新 React 组件状态时，最重要的是调用 setState 方法去更新，并且传入的对象是一个新的副本，而不是直接修改之前的状态。
+
+如果你错误地修改了组件的状态，React Diff 算法将无法捕获更改，而且你的组件也无法正确地更新。
+
+假设你有这样的状态:
+
+```
+this.state = {
+    colors: ['red', 'green', 'blue']
+}
+```
+
+现在你想要给这个数组添加颜色：
+
+```
+// 方法1：
+this.state.colors.push('yellow’)
+
+// 方法2：
+this.state.colors = [...this.state.colors, 'yellow’]
+```
+
+这两种方法都是错误的！在更新类组件中的状态时，必须使用 setState 方法，并且应该注意不要改变原始对象。
+
+下面是添加元素到数组的正确方法:
+
+```
+this.setState(prevState => ({ colors: [...prevState.colors, 'yellow'] }))
+```
+
+### 2、setState 批量更新
+
+setState 有两种使用方法：  
+第一种方法是传入一个对象作参数。  
+第二种方法是传入一个函数作参数。
+
+你知道这两种方法分别应该在什么时候使用吗？
+
+例如，如果你有一个可以启用或禁用的按钮，那么你可能会有一个名为 isDisabled 的状态，其中包含一个布尔值。
+
+如果你想切换这个按钮的状态，你可能很会写这样的一段代码：
+
+```
+// setState 使用一个对象作参数
+this.setState({ isDisabled: !this.state.isDisabled })
+```
+
+那么，这有什么问题呢？  
+问题在于 React 状态更新可以批处理（batchUpdate），这意味着多个状态更新可以在一个更新周期中发生。
+
+如果你的更新将被批处理，并且你对 isDisabled 状态有多个更新，那么最终结果可能不是你所期望的。
+
+更新状态的更正确的方法是提供前一个状态的函数作为参数:
+
+```
+this.setState(prevState => ({ isDisabled: !prevState.isDisabled }))
+```
+
+现在，即使你的状态更新被批处理，并且有多个更新都在操作 isDisabled 状态，但每个更新都依赖于正确的先前状态，因此你总是会得到预期的结果。
+
+类似的递增计数器也是如此。
+
+```
+// 不要这样做
+this.setState({ counterValue: this.state.counterValue + 1 })
+
+// 正确的写法
+this.setState(prevState => ({ counterValue: prevState.counterValue + 1 }))
+```
+
+### 3、setState 是异步的
+
+最后，记住 setState 是一种异步方法是很重要的。
+
+> 初学者可以先理解成异步，但严格意义上说，需要区分条件来看。  
+> 如：在 React 内部生命周期以及事件处理函数中是异步的。  
+> 如：在 setTimeout 函数中调用 setState 却是同步的。
+
+举个例子，假设我们有一个如下状态的 React 组件:
+
+```
+this.state = { name: '小张' }
+```
+
+有一个方法更新状态，并将新的状态打印到控制台上:
+
+```
+this.setState({ name: '小明' })
+console.log(this.state.name)
+```
+
+你可能认为打印出来的会是 `小明` ，但它不会! 它会打印 `小张` ！
+
+这是因为 setState 是异步的。
+
+这意味着执行到 setState 时，会把真正更新的操作放在异步队列中去执行，但它下面的同步代码将立即执行，所以打印出来的 state 就不是最新的。
+
+如果你想拿到更新完成后的最新状态，React 允许你传一个回调函数，该函数会在更新完成后运行。
+
+```
+this.setState({ name: '小明' }, () => console.log(this.state.name))
+```
+
+此时 `小明` 将被正确的打印出来了！
+
+### 4、总结
+
+好了！以上就是今天给大家分享的 React 中的三个常见错误及其纠正方法。
+
+犯错误是正常的，但要避免犯同样的错误。你在学习、我在学习、我们都在学习。让我们继续学习，一起变得更好。
