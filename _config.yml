@@ -4,7 +4,7 @@
 
 # Site
 title: Vshow | Dom
-subtitle: Mishow | Dom
+subtitle: Vshow | Dom
 description: vshow博客
 keywords: vshow
 author: Hu Xiaodo
@@ -44,7 +44,7 @@ highlight:
   line_number: true
   auto_detect: false
   tab_replace:
-  
+
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
 # per_page: Posts displayed per page. (0 = disable pagination)
@@ -53,7 +53,7 @@ index_generator:
   path: ''
   per_page: 6
   order_by: -date
-  
+
 # Category & Tag
 default_category: uncategorized
 category_map:
@@ -83,5 +83,5 @@ theme: diaspora
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: https://github.com/389042136/389042136.github.io.git
+  repo: https://github.com/ivshow/ivshow.github.io.git
   branch: master

@@ -1,9 +1,14 @@
 {
-  "name": "hexo-site",
-  "version": "0.0.0",
+  "name": "vshow",
+  "version": "1.0.0",
   "private": true,
   "hexo": {
-    "version": "3.8.0"
+    "version": "3.9.0"
+  },
+  "scripts": {
+    "new": "hexo new",
+    "start": "hexo server",
+    "build": "hexo clean && hexo generate && hexo deploy"
   },
   "dependencies": {
     "hexo": "^3.8.0",

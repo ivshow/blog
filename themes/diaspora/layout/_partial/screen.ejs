@@ -1,57 +1,59 @@
-<%  var first;
-    site.posts.each((item) => {
-        if (item.top) {
-            first = item;
-            return true;
-        }
-    })
-%>
+<!--
+ * @Author : hu.jiadong
+ * @Date   : 2020-06-22 16:47
+ * @WeChat : i-vshow
+ * @Email  : vshow@huxiaodo.com
+ * @Blog   : http://g.huxiaodo.com
+-->
+
+<% var first; site.posts.each((item) => { if (item.top) { first = item; return true; } }) %>
 <div id="screen">
-    <div id="mark">
-        <div class="layer" data-depth="0.4">
-            <%- image_tag(theme.welcome_cover || first.cover || "/img/welcome-cover.jpg", {id: "cover", crossorigin: "anonymous", width: 1920, height: 1080}) %>
-        </div>
+  <div id="mark">
+    <div class="layer" data-depth="0.4">
+      <%- image_tag(theme.welcome_cover || first.cover || "/img/welcome-cover.jpg", {id: "cover", crossorigin:
+      "anonymous", width: 1920, height: 1080}) %>
     </div>
-    <div id="snow_ctnr">
-        <div class="snow_dom_slice snow_01">
-            <div class="snow_drifter drift_01"></div>
-        </div>
-        <div class="snow_dom_slice snow_02">
-            <div class="snow_drifter drift_02"></div>
-        </div>
-        <div class="snow_dom_slice snow_03">
-            <div class="snow_drifter drift_03"></div>
-        </div>
-        <div class="snow_dom_slice snow_04">
-            <div class="snow_drifter drift_04"></div>
-        </div>
+  </div>
+  <div id="snow_ctnr">
+    <div class="snow_dom_slice snow_01">
+      <div class="snow_drifter drift_01"></div>
     </div>
-    <div class="rain-content">
-        <div class="rain back-row"></div>
-        <div class="rain front-row"></div>
+    <div class="snow_dom_slice snow_02">
+      <div class="snow_drifter drift_02"></div>
     </div>
-    <div id="vibrant">
-        <svg viewBox="0 0 2880 1620" height="100%" preserveAspectRatio="xMaxYMax slice">
-            <polygon opacity="0.7" points="2000,1620 0,1620 0,0 600,0 "/>
-        </svg>
-        <div></div>
+    <div class="snow_dom_slice snow_03">
+      <div class="snow_drifter drift_03"></div>
     </div>
-    <div id="header">
-        <div>
-            <div class="image-logo" href="/"></div>
-            <%- link_to('/mishow', ' ', {class: "icon-menu posttitle"})%>
-        </div>
+    <div class="snow_dom_slice snow_04">
+      <div class="snow_drifter drift_04"></div>
     </div>
-    <% if ( first ) { %>
-    <div id="post0">
-        <p><%- first.date.locale("zh-cn").format("MMMM DD, YYYY") %></p>
-        <h2><%- link_to(first.path, first.title || config.title, {class: "posttitle"}) %></h2>
-        <p class="summary"><%- truncate(strip_html(first.content), {length: 60, omission: '...'}) %></p>
+  </div>
+  <div class="rain-content">
+    <div class="rain back-row"></div>
+    <div class="rain front-row"></div>
+  </div>
+  <div id="vibrant">
+    <svg viewBox="0 0 2880 1620" height="100%" preserveAspectRatio="xMaxYMax slice">
+      <polygon opacity="0.7" points="2000,1620 0,1620 0,0 600,0 " />
+    </svg>
+    <div></div>
+  </div>
+  <div id="header">
+    <div>
+      <div class="image-logo" href="/"></div>
+      <%- link_to('/vshow', ' ', {class: "icon-menu posttitle"})%>
     </div>
-    <% } %>
-    <div class="btn-down">
-        <div class="down-sign-1"></div>
-        <div class="down-sign-2"></div>
-        <div class="down-sign-3"></div>
-    </div>
+  </div>
+  <% if ( first ) { %>
+  <div id="post0">
+    <p><%- first.date.locale("zh-cn").format("MMMM DD, YYYY") %></p>
+    <h2><%- link_to(first.path, first.title || config.title, {class: "posttitle"}) %></h2>
+    <p class="summary"><%- truncate(strip_html(first.content), {length: 60, omission: '...'}) %></p>
+  </div>
+  <% } %>
+  <div class="btn-down">
+    <div class="down-sign-1"></div>
+    <div class="down-sign-2"></div>
+    <div class="down-sign-3"></div>
+  </div>
 </div>
