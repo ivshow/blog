@@ -1,7 +1,7 @@
 ---
 title: 如何系统的学习 web 前端开发？
 date: 2019-06-20 19:27:03
-cover: http://f.huxiaodo.com/image/blog/a185df6b7753d89bf04c04bbaba58d78.jpg
+cover: http://f.huxiaodo.com/image/blog/qj9114851577.jpg
 ---
 
 因为许多前端新人自学一段时间之后，就迷茫了，不知道学到了什么阶段，也不清楚接下来该往哪个方向学习。

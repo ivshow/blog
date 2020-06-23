@@ -1,7 +1,7 @@
 ---
 title: Jest框架基本知识总结
 date: 2020-03-10 20:51:28
-cover: http://f.huxiaodo.com/image/blog/a185df6b7753d89bf04c04bbaba58d78.jpg
+cover: http://f.huxiaodo.com/image/blog/qj9128200803.jpg
 ---
 
 ### 1、安装命令

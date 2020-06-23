@@ -1,7 +1,6 @@
 ---
 title: 智慧航显（人脸识别）
 date: 2018-11-19 16:57:02
-top: true
 # mp3: http://huxiaodo.com/files/music/01.m4a
 cover: http://f.huxiaodo.com/image/blog/7a60b742253cf72a8883d0d444e6d289.jpg
 ---

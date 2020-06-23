@@ -33,7 +33,9 @@ date: 2020-06-22 16:47:08
 
 #### 项目展示
 
+- [国际房](https://www.rea.global/international/)： 一个全世界购房的网站，支持全球 78 个国家 10 种语言，采用 Next(React + SSR) + Express + Redux + Graphql + TypeScript + CSS in js 等潮流技术，响应式布局适配多种设备，SEO 优化提高搜索引擎排名。
 - [智慧航显](/2018/11/19/web07/)： 一款通过人脸识别技术自动识别，具有精准的室内导航路线、路径距离和行走时间。
+- [银川国际航空港综合交通枢纽](/2018/09/16/web09/)：一款基于 Vue + Vue-Router + VueX + Axios + Webpack + Less+ Mint-UI 开发的交通枢纽网站。
 
 #### 关于小站
 
