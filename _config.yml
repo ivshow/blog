@@ -3,18 +3,18 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Vshow | Dom
-subtitle: Vshow | Dom
+title: Vshow | Domi
+subtitle: Vshow | Domi
 description: vshow博客
 keywords: vshow
-author: Hu Xiaodo
-email: vshow@huxiaodo.com
+author: jaydon
+email: vshow@dooomi.com
 language: zh-CN
 timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://huxiaodo.com
+url: http://vshow.dooomi.com
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
