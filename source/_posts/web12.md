@@ -1,7 +1,7 @@
 ---
 title: TypeScript
 date: 2019-10-03 14:31:13
-cover: http://f.huxiaodo.com/image/blog/qj9102972768.jpg
+cover: http://f.dooomi.com/image/qj9102972768.jpg
 ---
 
 ### 1、数据类型

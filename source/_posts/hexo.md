@@ -3,7 +3,7 @@ title: Hexo + GitHub 搭建个人博客
 date: 2018-05-25 13:12:14
 tags: [Hexo, GitHub, GithubPages]
 # mp3: http://huxiaodo.com/files/music/01.m4a
-cover: http://f.huxiaodo.com/image/blog/6e5278055c8659e91488b827382f36c2.jpg
+cover: http://f.dooomi.com/image/6e5278055c8659e91488b827382f36c2.jpg
 ---
 
 搭建个人博客的念头已经很久了，一直忙于其他事情，终于有时间了！
@@ -29,17 +29,17 @@ git安装教程：https://jingyan.baidu.com/article/9f7e7ec0b17cac6f2815548d.htm
 
 ### 3. hexo的安装和启动  
 > 做到这里，前期准备工作已经完成，现在开始正式搭建个人博客，在合适地方选择新建一个hexo文件夹，然后右键选择Git Bash Here。  
-![Markdown](http://f.huxiaodo.com/image/hexo/0b7a91a059ae5a03s.png)  
+![Markdown](http://f.dooomi.com/image/0b7a91a059ae5a03s.png)  
 
 然后在命令行输入： npm install hexo-cli -g 命令，如图所示，add 104 package in 77.155s，并且文件夹中也多了node_modules文件夹和package-lock.json文件就说明下载安装完成。  
-![Markdown](http://f.huxiaodo.com/image/hexo/c1fb52ed7765e7e9.png)  
+![Markdown](http://f.dooomi.com/image/c1fb52ed7765e7e9.png)  
 当然你也可以通过运行hexo -v检查一下是否安装成功，如果秩序命令返回版本信息也是安装成功了。  
 现在我们可以开始实例化一个我们本地的博客样本了，这次我们要新建一个空白文件夹，比如在E盘，新建空白hexo文件夹，并同样的用右键git bash here ，在命令行输入hexo init，等待hexo实例化完成返回如图所示提示。  
-![Markdown](http://f.huxiaodo.com/image/hexo/20181204092156.png)
+![Markdown](http://f.dooomi.com/image/20181204092156.png)
 
 如果成功返回start blogging with hexo说明，你已经完成了本次博客搭建，剩下来就是如何使用的问题了，你不用担心，使用相比安装其实要简单，所以到这里一百步已经走了九十步了。  
 现在我们在命令行输入hexo s命令  
-![Markdown](http://f.huxiaodo.com/image/hexo/204bbb6b7efbc366.png)
+![Markdown](http://f.dooomi.com/image/204bbb6b7efbc366.png)
 
 然后打开浏览器输入localhost:4000即可看到我们实例化的静态博客了，是不是很简单。
 
@@ -50,18 +50,18 @@ git安装教程：https://jingyan.baidu.com/article/9f7e7ec0b17cac6f2815548d.htm
 > 访问github网站：http://github.com 这里简单介绍一下github网站，git是linux内核开发者，就是我们俗称的linux之父开发的用于管理分布式版本的控制系统，github就是支持且只支持git进行版本库托管，然后面向开源或私有项目的托管平台，任何人都可以注册账号发布你的开源代码在github免费托管，同时你也可以查到各种优秀的开源项目在github。  
 
 > 打开网页是这样的，然后username填写自己的用户名，不可以和别人重名，email填写自己有效的邮件地址，然后是password密码，如果内容都是正确的后面会有绿色的小勾，然后点击sign up for github即可。  
-![Markdown](http://f.huxiaodo.com/image/hexo/20181204091536.png)  
+![Markdown](http://f.dooomi.com/image/20181204091536.png)  
 
 > 开始新建自己的仓库就是new repository，点击你的头像旁边的+号，选择new respository。  
-![Markdown](http://f.huxiaodo.com/image/hexo/2b96df44d598cebf.png)  
+![Markdown](http://f.dooomi.com/image/2b96df44d598cebf.png)  
 
 > 然后给仓库起名字， 仓库的名字需要和你的账号对应，格式: yourname.github.io，然后create repository就可以创建成功了，接下来我们只要把本地的hexo博客发布到我们仓库，然后很快你就能在网页上访问到自己的博客了。  
 <font color="red">注意</font>   
 命名规则：你的github账号.github.io   
-![Markdown](http://f.huxiaodo.com/image/hexo/a8ff966ba70438eb.png)    
+![Markdown](http://f.dooomi.com/image/a8ff966ba70438eb.png)    
 
 > 成功create repository以后，会进到这个界面，我们选择http点击复制。  
-![Markdown](http://f.huxiaodo.com/image/hexo/70186aecbd7a5f79.png)
+![Markdown](http://f.dooomi.com/image/70186aecbd7a5f79.png)
 
 ### 2. hexo使用
 > 目录结构 

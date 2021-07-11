@@ -3,7 +3,7 @@ title: Vue 知识汇总
 date: 2018-07-16 12:52:54
 tags: [vue, vuex, axios]
 # mp3: http://huxiaodo.com/files/music/01.m4a
-cover: http://f.huxiaodo.com/image/blog/2f2c237c10afc281729211d6d7e15b2a.jpg
+cover: http://f.dooomi.com/image/2f2c237c10afc281729211d6d7e15b2a.jpg
 ---
 
 ###  1、什么是 mvvm？

@@ -2,7 +2,7 @@
 title: 银川国际航空港综合交通枢纽
 date: 2018-09-16 11:23:52
 # mp3: http://huxiaodo.com/files/music/01.m4a
-cover: http://f.huxiaodo.com/image/blog/a185df6b7753d89bf04c04bbaba58d78.jpg
+cover: http://f.dooomi.com/image/a185df6b7753d89bf04c04bbaba58d78.jpg
 ---
 
 该系统主要用于根据各类型交通工具的变化，为旅客提供实时的动态信息，机场设施、商家、酒店、景点的信息查询，并提供精准的室内导航，为旅客呈现出导航路线、行走距离和时间。
@@ -26,4 +26,4 @@ cover: http://f.huxiaodo.com/image/blog/a185df6b7753d89bf04c04bbaba58d78.jpg
 2、http://huxiaodo.com/TerminalScreen  （请在触摸屏上访问）
 
 ### 展示图
-![Markdown](http://f.huxiaodo.com/image/project/terminalScreen.gif)
+![Markdown](http://f.dooomi.com/image/terminalScreen.gif)

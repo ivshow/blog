@@ -3,7 +3,7 @@ title: CSS 样式书写规范
 date: 2018-06-23 13:52:22
 tags: [CSS]
 # mp3: http://huxiaodo.com/files/music/01.m4a
-cover: http://f.huxiaodo.com/image/blog/974c662d0cec5264f1649fa1b22f45e5.jpg
+cover: http://f.dooomi.com/image/974c662d0cec5264f1649fa1b22f45e5.jpg
 ---
 
 可能不同团队都有各自的规范，又或者很多人在写 CSS 的时候还是想到什么就写什么，不存在太多的约束。  

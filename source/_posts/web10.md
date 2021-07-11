@@ -1,7 +1,7 @@
 ---
 title: React 开发常见的错误
 date: 2019-03-20 19:27:03
-cover: http://f.huxiaodo.com/image/blog/qj5100178373.jpg
+cover: http://f.dooomi.com/image/qj5100178373.jpg
 ---
 
 关于前端开发，我最开心的事情就是总有新的东西可以学习。但我们可能一辈子都在掌握各种编程语言、库和框架，但仍然一无所知。

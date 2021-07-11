@@ -9,18 +9,17 @@ autoplay: true
 
 # 默认音乐
 mp3: 
-  - http://f.huxiaodo.com/music/blog/%E5%91%A8%E6%9D%B0%E4%BC%A6%20-%20%E5%91%8A%E7%99%BD%E6%B0%94%E7%90%83.mp3
-  - http://f.huxiaodo.com/music/blog/%E5%A5%BD%E5%96%9C%E6%AC%A2%E4%BD%A0.mp3
-  - http://f.huxiaodo.com/music/blog/%E6%B1%AA%E8%8B%8F%E6%B3%B7%20-%20%E4%B8%80%E7%AC%91%E5%80%BE%E5%9F%8E.mp3
-  - http://f.huxiaodo.com/music/blog/%E6%B1%AA%E8%8B%8F%E6%B3%B7%20-%20%E6%9C%89%E7%82%B9%E7%94%9C.mp3
-  - http://f.huxiaodo.com/music/blog/%E8%AE%B8%E5%B5%A9%20-%20%E7%BB%9D%E4%BB%A3%E9%A3%8E%E5%8D%8E.mp3
-  # - http://f.huxiaodo.com/test.mp3
+  - http://f.dooomi.com/media/%E5%91%A8%E6%9D%B0%E4%BC%A6%20-%20%E5%91%8A%E7%99%BD%E6%B0%94%E7%90%83.mp3
+  - http://f.dooomi.com/media/%E5%A5%BD%E5%96%9C%E6%AC%A2%E4%BD%A0.mp3
+  - http://f.dooomi.com/media/%E6%B1%AA%E8%8B%8F%E6%B3%B7%20-%20%E4%B8%80%E7%AC%91%E5%80%BE%E5%9F%8E.mp3
+  - http://f.dooomi.com/media/%E6%B1%AA%E8%8B%8F%E6%B3%B7%20-%20%E6%9C%89%E7%82%B9%E7%94%9C.mp3
+  - http://f.dooomi.com/media/%E8%AE%B8%E5%B5%A9%20-%20%E7%BB%9D%E4%BB%A3%E9%A3%8E%E5%8D%8E.mp3
 
 # 首页封面图, 为空时取文章的cover作为封面
-welcome_cover: http://f.huxiaodo.com/image/blog/41687891eb17eb2c111eccf3c2ccd911.jpg
+welcome_cover: http://f.dooomi.com/image/41687891eb17eb2c111eccf3c2ccd911.jpg
 
 # 默认文章封面图
-cover: http://f.huxiaodo.com/image/blog/92be55a16b511810f87a06dcea1a4f7e.jpg
+cover: http://f.dooomi.com/image/92be55a16b511810f87a06dcea1a4f7e.jpg
 
 # 是否关闭默认滚动条
 scrollbar: true

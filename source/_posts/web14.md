@@ -2,14 +2,14 @@
 title: 情话是抄的 说给你听是真的
 date: 2020-05-20 14:32:11
 top: true
-cover: http://f.huxiaodo.com/image/blog/a185df6b7753d89bf04c04bbaba58d78.jpg
+cover: http://f.dooomi.com/image/a185df6b7753d89bf04c04bbaba58d78.jpg
 ---
 
 又到了一年一度的 520 告白日，情话年年有，句句都真心。
 
 对喜欢的人讲情话，就是这么简单！
 
-![Markdown](http://f.huxiaodo.com/image/blog/qj6281376039.jpg)
+![Markdown](http://f.dooomi.com/image/qj6281376039.jpg)
 
 <br>
 
@@ -42,7 +42,7 @@ cover: http://f.huxiaodo.com/image/blog/a185df6b7753d89bf04c04bbaba58d78.jpg
 何以解忧
 唯有…唯有抱抱你
 
-![Markdown](http://f.huxiaodo.com/image/blog/qj9107780066.jpg)
+![Markdown](http://f.dooomi.com/image/qj9107780066.jpg)
 
 春眠不觉晓
 处.....处对象可好
@@ -88,7 +88,7 @@ cover: http://f.huxiaodo.com/image/blog/a185df6b7753d89bf04c04bbaba58d78.jpg
 “有”
 “恭喜你现在有两个女朋友了”
 
-![Markdown](http://f.huxiaodo.com/image/blog/qj8528924085.jpg)
+![Markdown](http://f.dooomi.com/image/qj8528924085.jpg)
 
 处对象嘛看看是关晓彤和鹿晗先分还是我们先分
 
@@ -132,7 +132,7 @@ cover: http://f.huxiaodo.com/image/blog/a185df6b7753d89bf04c04bbaba58d78.jpg
 我怕我做得不好
 让你觉得爱情不过如此
 
-![Markdown](http://f.huxiaodo.com/image/blog/qj6348736978.jpg)
+![Markdown](http://f.dooomi.com/image/qj6348736978.jpg)
 
 被你点赞过的朋友圈，叫做甜甜圈
 
@@ -191,7 +191,7 @@ cover: http://f.huxiaodo.com/image/blog/a185df6b7753d89bf04c04bbaba58d78.jpg
 “西瓜里？”
 “傻瓜，你在我心里。”
 
-![Markdown](http://f.huxiaodo.com/image/blog/qj8607979293.jpg)
+![Markdown](http://f.dooomi.com/image/qj8607979293.jpg)
 
 套路是学的，撩你是故意的，喜欢你是真的
 

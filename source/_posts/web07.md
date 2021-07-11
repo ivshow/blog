@@ -2,7 +2,7 @@
 title: 智慧航显（人脸识别）
 date: 2018-11-19 16:57:02
 # mp3: http://huxiaodo.com/files/music/01.m4a
-cover: http://f.huxiaodo.com/image/blog/7a60b742253cf72a8883d0d444e6d289.jpg
+cover: http://f.dooomi.com/image/7a60b742253cf72a8883d0d444e6d289.jpg
 ---
 
 该系统通过人脸识别技术自动识别旅客身份，为旅客提供航班动态、精准的室内导航路线、路径距离和行走时间，目的地天气等实用信息，并根据旅客以往乘机记录，自动筛选数据，给出温馨提示。
@@ -55,4 +55,4 @@ cover: http://f.huxiaodo.com/image/blog/7a60b742253cf72a8883d0d444e6d289.jpg
 
 ### 展示图
 
-![Markdown](http://f.huxiaodo.com/image/project/zhhx.gif)
+![Markdown](http://f.dooomi.com/image/zhhx.gif)

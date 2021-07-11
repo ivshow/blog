@@ -3,7 +3,7 @@ title: 移动端web开发总结
 date: 2018-08-06 14:36:24
 tags: [移动端, web]
 # mp3: http://huxiaodo.com/files/music/01.m4a
-cover: http://f.huxiaodo.com/image/blog/2d9cc3e13e331af310eaccb0ce12b2e4.jpg
+cover: http://f.dooomi.com/image/2d9cc3e13e331af310eaccb0ce12b2e4.jpg
 ---
 
 目前为止，互联网行业里，手机越来越智能化，移动端占有的比例越来越高，尤其实在电商，新闻，广告，游戏领域。用户要求越来越高，网站功能越来越好，效果越来越炫酷，这就要求我们产品质量越来越高，web前端开发而言是一个挑战，是一个难题，也是一个机遇。

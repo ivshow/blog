@@ -5,7 +5,7 @@ var Vshow = {
 
     var downSignBottom = 20;
     if (!Diaspora.P()) {
-      $.getScript('http://f.huxiaodo.com/js/blog/canvas-nest.min.js');
+      $.getScript('http://f.dooomi.com/js/canvas-nest.min.js');
       this.linkBlank();
       downSignBottom = 30;
     }
@@ -203,7 +203,7 @@ var Vshow = {
       imgUrl = 'snow1';
     }
     if (weather) {
-      $('#cover').attr('src', 'http://f.huxiaodo.com/image/blog/' + imgUrl + '.jpg');
+      $('#cover').attr('src', 'http://f.dooomi.com/image/' + imgUrl + '.jpg');
       $('body').addClass(weather);
     }
     callback();

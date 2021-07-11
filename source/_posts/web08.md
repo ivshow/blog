@@ -2,7 +2,7 @@
 title: 智慧服务终端
 date: 2018-10-07 13:02:17
 # mp3: http://huxiaodo.com/files/music/01.m4a
-cover: http://f.huxiaodo.com/image/blog/92be55a16b511810f87a06dcea1a4f7e.jpg
+cover: http://f.dooomi.com/image/92be55a16b511810f87a06dcea1a4f7e.jpg
 ---
 
 该系统包括5大模块：
@@ -41,4 +41,4 @@ cover: http://f.huxiaodo.com/image/blog/92be55a16b511810f87a06dcea1a4f7e.jpg
 - https://mp.weixin.qq.com/s/ZRW7Zy9sin4N6Vz7Rab4AA
 
 ### 展示图
-![Markdown](http://f.huxiaodo.com/image/project/iqt.gif)
+![Markdown](http://f.dooomi.com/image/iqt.gif)

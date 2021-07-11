@@ -2,7 +2,7 @@
 title: 自学成才的开发者有何优势和劣势
 date: 2018-08-28 16:02:12
 # mp3: http://huxiaodo.com/files/music/01.m4a
-cover: http://f.huxiaodo.com/image/blog/974c662d0cec5264f1649fa1b22f45e5.jpg
+cover: http://f.dooomi.com/image/974c662d0cec5264f1649fa1b22f45e5.jpg
 ---
 
 无论是自学开发者，还是科班出身，都可以在团队中，发挥自己的作用，两者都有自己的优势，也有一些不足。事实上，很多天才都是自学成才的。

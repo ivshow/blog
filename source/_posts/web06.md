@@ -2,7 +2,7 @@
 title: VIP旅客服务平台（人脸识别）
 date: 2018-10-21 10:33:46
 # mp3: http://huxiaodo.com/files/music/01.m4a
-cover: http://f.huxiaodo.com/image/blog/4e415c71aba7624b783ab638523f01e9.jpg
+cover: http://f.dooomi.com/image/4e415c71aba7624b783ab638523f01e9.jpg
 ---
 
 该系统通过人脸识别技术自动判断旅客身份，查询旅客位于贵宾厅的位置，及时提醒VIP旅客乘坐航班的实时信息。
@@ -31,6 +31,6 @@ cover: http://f.huxiaodo.com/image/blog/4e415c71aba7624b783ab638523f01e9.jpg
 - https://mp.weixin.qq.com/s/nubiHl9pckxkvqePAkSkjg
 
 ### 展示图
-![Markdown](http://f.huxiaodo.com/image/project/vip.gif)
+![Markdown](http://f.dooomi.com/image/vip.gif)
 
-![Markdown](http://f.huxiaodo.com/image/project/vip02.gif)
+![Markdown](http://f.dooomi.com/image/vip02.gif)
