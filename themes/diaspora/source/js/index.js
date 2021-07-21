@@ -155,7 +155,7 @@ var Vshow = {
   /**
    * 天气
    */
-  weather: function (callback) {
+  weather1: function (callback) {
     var weatherInfo = localStorage.getItem('weatherInfo');
     if (weatherInfo) {
       Vshow.showWeather(weatherInfo, callback);
@@ -187,6 +187,28 @@ var Vshow = {
     });
   },
 
+  weather: function (callback) {
+    $.ajax({
+      type: 'get',
+      async: false,
+      cache: false,
+      url: 'https://www.tianqiapi.com/free/day',
+      data: {
+        appid: '63596332',
+        appsecret: 'pHvA6IKK',
+        city: '西安'
+      },
+      dataType: 'jsonp',
+      jsonp: 'callback', //传递给请求处理程序或页面的，用以获得jsonp回调函数名的参数名(一般默认为:callback)
+      jsonpCallback: 'showWeather', //自定义的jsonp回调函数名称，默认为jQuery自动生成的随机函数名，也可以写"?"，jQuery会自动为你处理数据
+      success: function (data) {
+        var code = data.wea_img;
+        Vshow.showWeather(code, callback);
+        localStorage.setItem('weatherInfo', code);
+      },
+    });
+  },
+
   /**
    * 展示天气
    */
@@ -194,11 +216,11 @@ var Vshow = {
     // code = 22;
     var weather = '',
       imgUrl = '';
-    if (9 < code && code < 21) {
+    if (code == 'yu') {
       weather = 'rain';
       imgUrl = 'rain1';
       Vshow.playRain();
-    } else if (20 < code && code < 26) {
+    } else if (code == 'xue') {
       weather = 'snow';
       imgUrl = 'snow1';
     }
@@ -275,11 +297,11 @@ var Vshow = {
    */
   isNowDay: function () {
     var date = new Date(),
-      nowDay = date.getFullYear() + '-' + date.getMonth() + '-' + date.getDate(),
-      day = localStorage.getItem('huxiaodo_day');
+      nowDay = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate(),
+      day = localStorage.getItem('currentDay');
     if (day != nowDay) {
       localStorage.removeItem('weatherInfo');
-      localStorage.setItem('huxiaodo_day', nowDay);
+      localStorage.setItem('currentDay', nowDay);
     }
   },
 };
