@@ -10,7 +10,7 @@ date: 2020-06-22 16:47:08
 本人有几个属性：
 
 - 具有超强的自学能力，0 基础自学 web 前端的各种技术，喜欢潮流技术。
-- 具有良好的前端编程能力，致力于代码的整体结构规范及优化。
+- 具有良好的前端编程习惯，致力于代码的整体结构规范及优化。
 - 熟悉敏捷开发、持续化集成/持续化部署等标准化流程。
 - 特别特别宠爱女朋友，O(∩_∩)O 哈哈~
 
@@ -21,7 +21,7 @@ date: 2020-06-22 16:47:08
 
 #### 技能
 
-- React、Vue、Next、Jquery 等前端框架（类库）。
+- React、Vue、Next、Qiankun等前端框架。
 - TypeScript，Redux、Vuex。
 - Apollo、GraphQL、Axios、Fetch。
 - styled-components、styled-jsx 等 CSS-in-JS 潮流技术。
