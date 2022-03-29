@@ -1,6 +1,6 @@
 ---
 title: Vite 的好与坏
-cover: "/img/red-maple-ge5d893f15_640.jpg"
+cover: "/img/employee-geb669220c_640.png"
 date: 2021-9-8 13:10:12
 ---
 

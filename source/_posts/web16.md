@@ -1,6 +1,6 @@
 ---
 title: 3 行 CSS 代码实现日历界面
-cover: "/img/laptop-ge4831d46e_640.jpg"
+cover: "/img/to-learn-gbf6c2e2a9_640.jpg"
 date: 2020-09-1 16:30:12
 ---
 

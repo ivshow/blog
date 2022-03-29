@@ -1,6 +1,6 @@
 ---
 title: 为什么要用 setTimeout 模拟 setInterval ？
-cover: "/img/laptop-ge4831d46e_640.jpg"
+cover: "/img/science-g49fdd3b92_640.jpg"
 date: 2020-11-20 18:20:01
 ---
 
