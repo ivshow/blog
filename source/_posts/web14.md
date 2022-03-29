@@ -1,7 +1,6 @@
 ---
 title: 情话是抄的 说给你听是真的
 date: 2020-05-20 14:32:11
-top: true
 cover: http://f.dooomi.com/image/a185df6b7753d89bf04c04bbaba58d78.jpg
 ---
 
