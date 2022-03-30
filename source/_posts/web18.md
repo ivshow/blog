@@ -63,7 +63,7 @@ Webpack 启动后会做一堆事情，经历一条很长的编译打包链条，
 
 Vite 的用法很简单， 执行初始化命令：
 
-```
+```js
 yarn create @vitejs/app my-vue-app --template vue
 ```
 

@@ -19,7 +19,7 @@ date: 2021-7-23 12:05:55
 解决办法：高度height和行高line-height内容用padding撑开
 
 例如：
-```
+```js
 .content{
       float: left;
       box-sizing: border-box;
@@ -73,7 +73,7 @@ MDN上是这样定义的：
 固定定位的元素 在元素内 input 框聚焦的时候 弹出的软键盘占位 失去焦点的时候软键盘消失 但是还是占位的 导致input框不能再次输入 在失去焦点的时候给一个事件
 
 解决办法：
-```
+```js
 <div class="list-warp">
   <div class="title"><span>投·被保险人姓名</span></div>
    <div class="content">
@@ -107,7 +107,7 @@ changeBlur(){
 出现原因分析：待补充
 
 解决办法：给input和textarea标签添加focus事件，如下，先判断是不是安卓手机下的操作，当然，可以不用判断机型，Document 对象属性和方法，setTimeout延时0.5秒，因为调用安卓键盘有一点迟钝，导致如果不延时处理的话，滚动就失效了
-```
+```js
 hangefocus(){
   let u = navigator.userAgent, app = navigator.appVersion;
   let isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1;

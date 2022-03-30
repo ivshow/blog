@@ -6,7 +6,7 @@ date: 2020-07-18 20:47:41
 
 后 jQuery 时代的前端革命是由 AngularJs 发起的，它最初的一个想法是将后台的技术架构复制到前台来。后端的一个核心技术是所谓的模板技术(template)。它可以用一个公式来描述
 
-```
+```js
 html = template(vars)
 ```
 
@@ -14,7 +14,7 @@ html = template(vars)
 
 React 的模式相当于是对模板渲染模型的一个面向领域结构的改进
 
-```
+```js
 vdom = render(viewModel)
 ```
 
@@ -24,13 +24,13 @@ vdom 是面向浏览器的领域模型，而 viewModel 是基于业务领域概�
 
 在新的范式下，viewModel 的构造和管理成为一个独立的问题。而界面组件之间也不再直接交互，它们之间的关联通过共同依赖的 js 对象来得到隐式的表达。
 
-```
+```js
 control <--> js <--> control
 ```
 
 如果我们改写一下形式，可以把 React 的本质看得更清楚一些：
 
-```
+```js
 viewModel => vdom
 ```
 
@@ -38,7 +38,7 @@ render 函数可以看作是从 viewModel 上拉取领域数据，传送到 vdom
 
 但是我们知道，前端与后端有一个本质性的不同：前端是讲究交互性的，而后端强调的只是单向执行。因此，我们需要一个新的概念 reactive，利用这个概念可以把上面的公式改写为
 
-```
+```js
 (props, @reactive state) => vdom
 ```
 
@@ -51,7 +51,7 @@ React 兜兜转转很多年，一直没有能够找到最契合以上公式的�
 
 现代框架技术的发展仔细回顾起来，其实可以看作是对传统面向对象封装概念的反叛史。面向对象强调先有对象，再有属性和方法，做事之前先拿到 this。而现代框架强调的是全局规则，直接表达，为什么无论干什么事都要找个 this 指针绕一下呢？对比一下 React 此前的类组件
 
-```
+```js
 classFriendStatusextendsReact.Component {
     constructor(props) {
         super(props);

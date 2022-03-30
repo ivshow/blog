@@ -11,7 +11,7 @@ date: 2022-01-12 21:46:35
 但发现后面使用 JSON.parse 方法之后，发现数据有所变化。
 
 代码简化：
-```
+```js
 let obj = {
   name: 'Gopal',
   age: Infinity
@@ -26,7 +26,7 @@ console.log(originObj) // {"name":"Gopal","age":null}
 简单粗暴，重新给 age 属性赋值
 
 解决方法2：
-```
+```js
 function censor(key, value) {
   if (value === Infinity) {
     return "Infinity";
@@ -45,7 +45,7 @@ var c = JSON.parse(
 这就有点绕了，当做参考吧，其实我自己是直接使用了第一种方法。不过这里可以看到 JSON.stringify 实际上还有第二个参数，那它有什么用呢？接下来我们揭开它的神秘面纱。
 
 #### JSON.stringify 基础语法
-```
+```js
 JSON.stringify(value[, replacer [, space]])
 ```
 
@@ -55,7 +55,7 @@ MDN 中文文档对它的解释如下：
 JSON.stringify() 方法将一个 JavaScript 值**（对象或者数组）**转换为一个 JSON 字符串，如果指定了 replacer 是一个函数，则可以选择性地替换值，或者如果指定了 replacer 是一个数组，则可选择性地仅包含数组指定的属性。
 
 我个人觉得是有所不妥的，不妥之处在于“对象或者数组”，因为实际上对于普通的值，我们也可以使用 JSON.stringify，只是我们很少这么用罢了。不过这个问题不大，我们文中介绍的也都是针对对象或者数组。
-```
+```js
 JSON.stringify('foo');   // '"foo"'
 ```
 英文版的解释就会合理很多
@@ -68,7 +68,7 @@ The JSON.stringify() method converts a JavaScript object or value to a JSON stri
 这个参数是可选的，可以是一个函数，也可以是一个数组
 
 当是一个函数的时候，则在序列化的过程中，被序列化的每个属性都会经过该函数的转换和处理，看如下代码：
-```
+```js
 let replacerFun = function (key, value) {
   console.log(key, value)
   if (key === 'name') {
@@ -91,7 +91,7 @@ console.log(JSON.stringify(myIntro, replacerFun))
 值得注意的是，在一开始 replacer 函数会被传入一个空字符串作为 key 值，代表着要被 stringify 的这个对象
 
 上面 console.log(key, value) 输出的值如下：
-```
+```js
 { name: 'Gopal', age: 25, like: 'FE' }
 name Gopal
 age 25
@@ -101,13 +101,13 @@ like FE
 可以看出，通过第二个参数，我们可以更加灵活的去操作和修改被序列化目标的值
 
 当第二个参数为数组的时候，只有包含在这个数组中的属性名才会被序列化
-```
+```js
 JSON.stringify(myIntro, ['name']) // {"name":"Gopal"}
 ```
 
 ##### 中看不中用的第三个参数
 指定缩进用的空白字符串，更多时候就是指定一个数字，代表几个空格：
-```
+```js
 let myIntro = {
   name: 'Gopal',
   age: 25,
@@ -128,7 +128,7 @@ console.log(JSON.stringify(myIntro, null, 2))
 #### JSON.stringify 使用场景
 
 ##### 判断对象/数组值是否相等
-```
+```js
 let a = [1,2,3],
     b = [1,2,3];
 JSON.stringify(a) === JSON.stringify(b);// true
@@ -136,7 +136,7 @@ JSON.stringify(a) === JSON.stringify(b);// true
 
 ##### localStorage/sessionStorage 存储对象
 我们知道 localStorage/sessionStorage 只可以存储字符串，当我们想存储对象的时候，需要使用 JSON.stringify 转换成字符串，获取的时候再 JSON.parse
-```
+```js
 // 存
 function setLocalStorage(key,val) {
     window.localStorage.setItem(key, JSON.stringify(val));
@@ -149,7 +149,7 @@ function getLocalStorage(key) {
 ```
 
 ##### 实现对象深拷贝
-```
+```js
 let myIntro = {
   name: 'Gopal',
   age: 25,
@@ -174,7 +174,7 @@ console.log(myIntro, copyMe)
 
 ##### 转换属性值中有 toJSON 方法，慎用
 转换值中如果有 toJSON 方法，该方法返回的值将会是最后的序列化结果
-```
+```js
 // toJSON
 let toJsonMyIntro = {
   name: "Gopal",
@@ -192,7 +192,7 @@ console.log(JSON.stringify(toJsonMyIntro)); // "前端"
 分为两种情况
 
 一种是数组对象，undefined、任意的函数以及 symbol 值会被转换成 null
-```
+```js
 JSON.stringify([undefined, Object, Symbol("")]);
 // '[null,null,null]'
 ```
@@ -202,7 +202,7 @@ JSON.stringify({ x: undefined, y: Object, z: Symbol("") });
 // '{}'
 ```
 对于这种情况，我们可以使用 JSON.stringify 的第二个参数，使其达到符合我们的预期
-```
+```js
 const testObj = { x: undefined, y: Object, z: Symbol("test") }
 
 const resut = JSON.stringify(testObj, function (key, value) {
@@ -219,7 +219,7 @@ console.log(resut)
 ```
 
 ##### 包含循环引用的对象，慎用
-```
+```js
 let objA = {
   name: "Gopal",
 }
@@ -233,7 +233,7 @@ objB.name = objA
 JSON.stringify(objA)
 ```
 会报以下错误：
-```
+```js
 Uncaught TypeError: Converting circular structure to JSON
     --> starting at object with constructor 'Object'
     |     property 'age' -> object with constructor 'Object'
@@ -244,7 +244,7 @@ Uncaught TypeError: Converting circular structure to JSON
 
 ##### 以 symbol 为属性键的属性，慎用
 所有以 symbol 为属性键的属性都会被完全忽略掉，即便 replacer 参数中强制指定包含了它们。
-```
+```js
 JSON.stringify({ [Symbol.for("foo")]: "foo" }, [Symbol.for("foo")])
 // '{}'
 
@@ -258,7 +258,7 @@ JSON.stringify({ [Symbol.for("foo")]: "foo" }, function (k, v) {
 
 ##### 值为 NaN 和 Infinity，慎用
 数组的值，或者非数组对象属性值为 NaN 和 Infinity 的，会被转换成 null
-```
+```js
 let me = {
   name: "Gopal",
   age: Infinity,
@@ -273,7 +273,7 @@ JSON.stringify([NaN, Infinity])
 
 ##### 具有不可枚举的属性值时，慎用
 不可枚举的属性默认会被忽略：
-```
+```js
 let person = Object.create(null, {
   name: { value: "Gopal", enumerable: false },
   age: { value: "25", enumerable: true },
@@ -285,12 +285,3 @@ console.log(JSON.stringify(person))
 
 #### 总结
 JSON.stringify 在实际应用中确实很方便的解决了我们很多问题，比如简单的深拷贝等。但是我们在使用时候，也需要知道它有哪些不足之处，在目标值如果是一些特殊值的情况下，可能序列化后的结果会不符合我们的预期，这个时候就需要慎用
-
-##### 参考资料
-[1]JSON.stringify converting Infinity to null: https://stackoverflow.com/questions/16644597/json-stringify-converting-infinity-to-null
-
-[2]MDN  JSON.stringify(): https://wiki.developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify
-
-[3]json.stringify()的妙用，json.stringify()与json.parse()的区别: https://www.cnblogs.com/echolun/p/9631836.html
-
-[4]你不知道的 JSON.stringify() 的威力: *https://juejin.im/post/5decf09de51d45584d238319#heading-0

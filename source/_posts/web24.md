@@ -13,7 +13,7 @@ top: true
 Vue提供了minxin这种在组件内插入组件属性的方法，个人建议这货能少用就少用，但是有个场景则非常建议使用minxin：当某段代码重复出现在多个组件中，并且这个重复的代码块很大的时候，将其作为一个minxin常常能给后期的维护带来很大的方便。
 
 比如我们在项目中封装一个列表功能，有下拉刷新，加载自动请求数据，上拉加载下一页数据等等，代码如下：
-```
+```js
 export default {
     data() {
         return {
@@ -139,7 +139,7 @@ export default {
 }
 ```
 很多人看到这样场景，应该会好奇为什么不封装成一个组件？由于很多列表样式不尽相同，所以封装成一个组件可扩展性不高。但我们可以通过minxin来简化代码：
-```
+```js
 <template>
   <view class="c-recommend-goods">
     <!-- 列表样式 -->
@@ -169,7 +169,7 @@ export default {
 
 #### 拯救繁乱的template--render函数
 有时候项目中template里存在一值多判断，如果按照下方代码书写业务逻辑，代码冗余且杂乱。
-```
+```js
 <template>
   <div>
     <h1 v-if="level === 1">
@@ -208,7 +208,7 @@ export default {
 </script>
 ```
 现在使用 render 函数重写上面的例子：
-```
+```js
 <script>
   export default {
     props: {
@@ -226,7 +226,7 @@ export default {
 
 #### 一劳永逸的组件注册
 组件使用前，需要引入后再注册：
-```
+```js
 import BaseButton from './baseButton'
 import BaseIcon from './baseIcon'
 import BaseInput from './baseInput'
@@ -240,7 +240,7 @@ export default {
 }
 ```
 现在 BaseButton、 BaseIcon和BaseInput都可以在模板中使用了：
-```
+```js
 <BaseInput
   v-model="searchText"
   @keydown.enter="search"
@@ -254,7 +254,7 @@ export default {
 这时，我们需要借助一下webpack的require.context() 方法来创建自己的（模块）上下文，从而实现自动动态require组件。这个方法需要3个参数：要搜索的文件夹目录，是否还应该搜索它的子目录，以及一个匹配文件的正则表达式。
 
 我们先在components文件夹（这里面都是些高频组件）添加一个叫global.js的文件，在这个文件里使用require.context 动态将需要的高频组件统统打包进来。然后在main.js文件中引入global.js的文件。
-```
+```js
 //  global.js文件
 import Vue from 'vue'
 function changeStr (str) {
@@ -283,7 +283,7 @@ Vue.use(index)
 
 #### 隐藏的大招--hook
 开发过程中我们有时候要创建一个定时器，在组件被销毁之前，这个定时器也要销毁。代码如下：
-```
+```js
 mounted() {
   // 创建一个定时器
     this.timer = setInterval(() => {
@@ -301,7 +301,7 @@ mounted() {
 这种写法有个很明显的弊端：定时器timer的创建和清理并不是在一个地方，这样很容易导致忘记去清理！
 
 我们可以借助hook对代码整合，这样代码也更容易维护了：
-```
+```js
 mounted() {
     let timer = setInterval(() => {
       // ......
@@ -319,7 +319,7 @@ mounted() {
 hook除了上面的运用外，还可以外部监听组件的生命周期函数。在某些情况下，我们需要在父组件中了解一个子组件何时被创建、挂载或更新。
 
 比如，如果你要在第三方组件 CustomSelect 渲染时监听其 updated 钩子，可以通过@hook:updated来实现：
-```
+```js
 <template>
   <!--通过@hook:updated监听组件的updated生命钩子函数-->
   <!--组件的所有生命周期钩子都可以通过@hook:钩子函数名 来监听触发-->
@@ -342,7 +342,7 @@ export default {
 
 #### 简单暴力的router key
 我们在项目开发时，可能会遇到这样问题:当页面切换到同一个路由但不同参数地址时，比如/detail/1，跳转到/detail/2，页面跳转后数据竟然没更新？路由配置如下：
-```
+```js
 {
      path: "/detail/:id",
      name:"detail",
@@ -350,14 +350,14 @@ export default {
  }
 ```
 这是因为vue-router会识别出两个路由使用的是同一个组件从而进行复用，并不会重新创建组件，而且组件的生命周期钩子自然也不会被触发，导致跳转后数据没有更新。那我们如何解决这个问题呢？我们可以为router-view组件添加属性key,例子如下：
-```
+```js
 <router-view :key="$route.fullpath"></router-view>
 ```
 这种办法主要是利用虚拟DOM在渲染时候通过key来对比两个节点是否相同，如果key不相同，就会判定router-view组件是一个新节点，从而先销毁组件，然后再重新创建新组件，这样组件内的生命周期会重新触发。
 
 #### 高精度权限控制--自定义指令directive
 我们通常给一个元素添加v-if / v-show，来判断该用户是否有权限，但如果判断条件繁琐且多个地方需要判断，这种方式的代码不仅不优雅而且冗余。针对这种情况，我们可以封装了一个指令权限，能简单快速的实现按钮级别的权限判断。我们先在新建个array.js文件，用于存放与权限相关的全局函数
-```
+```js
 // array.js
 export function checkArray (key) {
   let arr = ['admin', 'editor']
@@ -370,7 +370,7 @@ export function checkArray (key) {
 }
 ```
 然后在将array文件挂载到全局中
-```
+```js
 // main.js
 import { checkArray } from "./common/array";
 Vue.config.productionTip = false;
@@ -387,7 +387,7 @@ Vue.directive("permission", {
 });
 ```
 最后我们在页面中就可以通过自定义指令 v-permission来判断：
-```
+```js
 <div class="btns">
     <button v-permission="'admin'">权限按钮1</button>  // 会显示
     <button v-permission="'visitor'">权限按钮2</button> //无显示
@@ -406,7 +406,7 @@ Vue 2.6的最酷功能之一是可以将指令参数动态传递给组件。我�
 <a v-on:[eventName]="doSomething"> 这是个链接 </a>
 ```
 接下来我们看个例子：假设你有一个按钮，在某些情况下想监听单击事件，在某些情况下想监听双击事件。这时动态指令参数派上用场：
-```
+```js
 <template>
   <div>
     <aButton @[someEvent]="handleSomeEvent()" />
@@ -437,7 +437,7 @@ Vue.js 允许你自定义过滤器，它的用法其实是很简单，但是可�
 - 使用场景：双花括号插值和 v-bind 表达式 (后者从 2.1.0+ 开始支持)。
 ##### 2.定义过滤器
 可以在一个组件的选项中定义本地的过滤器：
-```
+```js
 filters: {
   capitalize: function (value) {
     if (!value) return ''
@@ -450,7 +450,7 @@ filters: {
 
 ##### 3.使用过滤器
 使用方法也简单，即在双花括号中使用管道符(pipeline) |隔开
-```
+```js
 <!-- 在双花括号中 -->
 <div>{{ myData| filterName}}</div>
 <div>{{ myData| filterName(arg)}}</div>
@@ -458,11 +458,11 @@ filters: {
 <div v-bind:id="rawId | formatId"></div>
 ```
 过滤器可以串联：
-```
+```js
 {{ message | filterA | filterB }}
 ```
 在这个例子中，filterA 被定义为接收单个参数的过滤器函数，表达式 message 的值将作为参数传入到函数中。然后继续调用同样被定义为接收单个参数的过滤器函数 filterB，将 filterA 的结果传递到 filterB 中。接下来我们看个如何使用过滤器格式化日期的例子：
-```
+```js
 <div>
     <h2>显示格式化的日期时间</h2>
     <p>{{ date }}</p>
@@ -483,12 +483,3 @@ filters: {
   }
 ```
 ![编码](/img/20220329190555.png)
-
-#### 参考文章与书籍
-Vue官方文档
-Vue2.6查漏补缺
-Vue.js最佳实践（五招让你成为Vue.js大师)
-实战技巧，Vue原来还可以这样写
-使用Vue.observable()进行状态管理
-Vue 项目构建与开发入门
-2020年的12个Vue.js开发技巧和窍门

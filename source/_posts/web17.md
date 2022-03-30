@@ -13,7 +13,7 @@ date: 2020-11-20 18:20:01
 
 定时器代码：
 
-```
+```js
 setInterval(fn(), N);
 ```
 
@@ -23,7 +23,7 @@ setInterval(fn(), N);
 
 比如：
 
-```
+```js
 let startTime = new Date().getTime();
 let count = 0;
 //耗时任务
@@ -56,7 +56,7 @@ setInterval(function() {
 
 再次强调，定时器指定的时间间隔，表示的是何时将定时器的代码添加到消息队列，而不是何时执行代码。所以真正何时执行代码的时间是不能保证的，取决于何时被主线程的事件循环取到，并执行。
 
-```
+```js
 setInterval(function, N)
 //即：每隔N秒把function事件推到消息队列中
 ```
@@ -76,7 +76,7 @@ setInterval(function, N)
 
 来看一个经典的例子来说明他们的不同：
 
-```
+```js
 for (var i = 0; i < 5; i++) {
   setTimeout(function() {
     console.log(i);
@@ -101,7 +101,7 @@ for (var i = 0; i < 5; i++) {
 
 1.写一个 interval 方法
 
-```
+```js
 let timer = null
 interval(func, wait){
     let interv = function(){
@@ -114,20 +114,15 @@ interval(func, wait){
 
 2.和 setInterval() 一样使用它
 
-```
+```js
 interval(function() {}, 20);
 ```
 
 3.终止定时器
 
-```
+```js
 if (timer) {
   window.clearSetTimeout(timer);
   timer = null;
 }
 ```
-
-### 参考
-
-- 为什么要用 setTimeout 模拟 setInterval ？
-- 用 settTimeout()代替 setInterval()

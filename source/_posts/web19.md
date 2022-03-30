@@ -20,7 +20,7 @@ date: 2021-1-10 19:10:50
 
 下面的打印结果是啥：
 
-```
+```js
 const object = {
   message: 'Hello, World!',
 
@@ -42,7 +42,7 @@ object.getmessage()是一个方法调用，此时的 this 表示 object。
 
 下面代码打印什么：
 
-```
+```js
 function Pet(name) {
   this.name = name;
 
@@ -73,7 +73,7 @@ this.getName = () => this.name在构造的对象上创建方法getName。而且�
 
 下面代码打印什么：
 
-```
+```js
 const object = {
   message: 'Hello, World!',
 
@@ -97,7 +97,7 @@ setTimeout(object.logMessage, 1000);
 
 如何调用logMessage函数，让它打印 "Hello, World!" ?
 
-```
+```js
  message: 'Hello, World!'
 };
 
@@ -110,7 +110,7 @@ function logMessage() {
 
 至少有 3 种方式，可以做到：
 
-```
+```js
 message: 'Hello, World!'
 };
 
@@ -133,7 +133,7 @@ boundLogMessage();
 
 下面代码打印什么：
 
-```
+```js
 const object = {
   who: 'World',
 
@@ -161,7 +161,7 @@ farewell()的外部作用域是全局作用域，它是全局对象。因此obje
 
 下面代码打印什么：
 
-```
+```js
 var length = 4;
 function callback() {
   console.log(this.length); // What is logged?
@@ -186,7 +186,7 @@ callback()是在method()内部使用常规函数调用来调用的。由于在�
 
 下面代码打印什么：
 
-```
+```js
 var length = 4;
 function callback() {
   console.log(this.length); // What is logged?
@@ -205,7 +205,7 @@ object.method(callback, 1, 2);
 
 obj.method(callback, 1, 2)被调用时有3个参数:callback, 1和2。结果，method()内部的参数特殊变量是如下结构的数组类对象:
 
-```
+```js
 {
   0: callback,
   1: 1, 

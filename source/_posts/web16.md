@@ -11,7 +11,7 @@ date: 2020-09-1 16:30:12
 
 先看 HTML 部分：
 
-```
+```js
 <div class="calendar-wrapper">
   <h1>Decemeber</h1>
   <ul class="calendar">
@@ -36,7 +36,7 @@ date: 2020-09-1 16:30:12
 
 为简单起见，这里把一周七天和日期全都放进一个列表里了。CSS 代码更简单了：
 
-```
+```js
 .calendar {
   display: grid; // 1
   grid-template-columns: repeat(7, 1fr);  // 2
@@ -48,13 +48,13 @@ date: 2020-09-1 16:30:12
 
 稍微解释下，第一行就是将列表声明为 grid 容器。第二行的属性 grid-template-columns 用来设置每列的宽度。一周有 7 天，因此需要 7 列。也可以这样写：
 
-```
+```js
 grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 ```
 
 或者
 
-```
+```js
 grid-template-columns: 40px 40px 40px 40px 40px 40px 40px;
 ```
 

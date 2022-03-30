@@ -27,7 +27,7 @@ Vue Router 是 Vue.js 官方的路由管理器。
 针对复用组件（只是路由参数发生改变），生命周期函数钩子不会被调用，如何能刷新组件了？
 
 - watch监听
-```
+```js
 watch: {
   '$route' (to, from) {
   // 对路由变化作出响应...
@@ -42,7 +42,7 @@ beforeRouteUpdate (to, from, next) {
 }
 ```
 #### 2. 路由匹配
-```
+```js
 {
 // 会匹配所有路径
 path: '*'
@@ -59,7 +59,7 @@ path: '/user-*'
 当使用一个通配符时，$route.params 内会自动添加一个名为 pathMatch 参数。
 
 它包含了 URL 通过通配符被匹配的部分：
-```
+```js
 // 给出一个路由 { path: '/user-*' }
 this.$router.push('/user-admin')
 this.$route.params.pathMatch // 'admin'
@@ -69,7 +69,7 @@ this.$route.params.pathMatch // '/non-existing'
 ```
 
 #### 3. 高级匹配模式
-```
+```js
 // 命名参数必须有"单个字符"[A-Za-z09]组成
  
 // ?可选参数
@@ -109,7 +109,7 @@ this.$route.params.pathMatch // '/non-existing'
 接下来看几个例子来看看第二个第三个参数的调用时机：
 
 ##### 1. 组件1跳转组件2
-```
+```js
 // 组件1
 this.$router.push({ name: 'number' }, () => {
   console.log('组件1：onComplete回调');
@@ -117,7 +117,7 @@ this.$router.push({ name: 'number' }, () => {
   console.log('组件1：onAbort回调');
 });
 ```
-```
+```js
 / 组件2
 beforeRouteEnter(to, from, next) {
   console.log('组件2：beforeRouteEnter');
@@ -134,7 +134,7 @@ created() {
 组件之间跳转触发onComplete回调。
 
 ##### 2. 组件2跳转组件2（不带参数）
-```
+```js
 this.$router.push({ name: 'number'}, () => {
   console.log('组件2：onComplete回调');
 }, () => {
@@ -145,7 +145,7 @@ this.$router.push({ name: 'number'}, () => {
 组件自我跳转当不带参数时触发onAbort回调。但是当自我跳转带参数时可能情况就有点不一样。
 
 ##### 3. 组件2跳转组件2（带参数）
-```
+```js
 this.$router.push({ name: 'number', params: { foo: this.number}}, () => {
     console.log('组件2：onComplete回调');
 }, () => {
@@ -161,7 +161,7 @@ this.$router.push({ name: 'number', params: { foo: this.number}}, () => {
 你可以在界面中拥有多个单独命名的视图，而不是只有一个单独的出口。
 
 如果 router-view 没有设置名字，那么默认为 default。
-```
+```js
 <router-view class="view one"></router-view>
 <router-view class="view two" name="a"></router-view>
 <router-view class="view three" name="b"></router-view>
@@ -169,7 +169,7 @@ this.$router.push({ name: 'number', params: { foo: this.number}}, () => {
 一个视图使用一个组件渲染，因此对于同个路由，多个视图就需要多个组件。
 
 确保正确使用 components 配置 (带上 s)：
-```
+```js
 onst router = new VueRouter({
 routes: [
   {
@@ -185,7 +185,7 @@ routes: [
 ```
 
 #### 7. 重定向
-```
+```js
 { path: '/a', redirect: '/b' }
 { path: '/a', redirect: { name: 'foo' }}
 { path: '/a', redirect: to => {
@@ -199,7 +199,7 @@ routes: [
 
 #### 8. 使用props解耦 $route
 在组件中使用 $route 会使之与其对应路由形成高度耦合，从而使组件只能在某些特定的 URL 上使用，限制了其灵活性。
-```
+```js
 // router文件
 // 对于包含命名视图的路由，你必须分别为每个命名视图添加 `props` 选项：
 {
@@ -220,7 +220,7 @@ routes: [
 - router.beforeResolve 全局解析守卫2.5.0新增。在beforeRouteEnter调用之后调用。
 
 - router.afterEach 全局后置钩子 进入路由之后。
-```
+```js
 // 入口文件
 import router from './router'
  
@@ -242,7 +242,7 @@ console.log('afterEach 全局后置守卫');
 
 ##### 2. 路由独享守卫
 - beforeEnter全局前置守卫进入路由之前。
-```
+```js
 {
   path: '/number/:name',
   props: true,
@@ -263,7 +263,7 @@ console.log('afterEach 全局后置守卫');
 - beforeRouteUpdate(2.2新增)
 
 - beforeRouteLeave
-```
+```js
 beforeRouteEnter(to, from, next) {
   // 在渲染该组件的对应路由被 confirm 前调用
   // 不！能！获取组件实例 `this`
